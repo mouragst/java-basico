@@ -1,0 +1,32 @@
+package entities;
+
+public class NaturalPerson extends Person {
+
+	private double healthCare;
+
+	public NaturalPerson() {
+	}
+
+	public NaturalPerson(String name, Double anualGain, double healthCare) {
+		super(name, anualGain);
+		this.healthCare = healthCare;
+	}
+
+	public double getHealthCare() {
+		return healthCare;
+	}
+
+	public void setHealthCare(double healthCare) {
+		this.healthCare = healthCare;
+	}
+
+	@Override
+	public double tax() {
+		if (anualGain <= 20000) {
+			anualGain *= 0.15;
+		} else {
+			anualGain *= 0.25;
+		}
+		return anualGain - (healthCare * 0.5);
+	}
+}

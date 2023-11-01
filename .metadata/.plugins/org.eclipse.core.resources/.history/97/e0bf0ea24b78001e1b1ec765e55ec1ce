@@ -1,0 +1,33 @@
+package entities;
+
+public class NaturalPerson extends Person {
+
+	private Integer employee;
+
+	public NaturalPerson() {
+	}
+
+	public NaturalPerson(String name, Double anualGain, Integer employee) {
+		super(name, anualGain);
+		this.employee = employee;
+	}
+
+	public Integer getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Integer employee) {
+		this.employee = employee;
+	}
+
+	@Override
+	public double tax() {
+		if (anualGain <= 20000) {
+			anualGain *= 0.15;
+		} else {
+			anualGain *= 0.25;
+		}
+		return anualGain - ()
+	}
+
+}

@@ -1,0 +1,57 @@
+package entities;
+
+public class OrderItem {
+	
+	private int quantity;
+	private Double price;
+	
+	private Product products;
+	
+	public OrderItem() {
+	}
+	
+	public OrderItem(int quantity, Double price, Product products) {
+		this.quantity = quantity;
+		this.price = price;
+		this.products = products;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	
+	public Product getProducts() {
+		return products;
+	}
+
+	public void setProducts(Product products) {
+		this.products = products;
+	}
+
+	public double subTotal() {
+		return quantity * price;
+	}
+	
+	public String toString() {
+		return getProducts().getName()
+				+ ", $"
+				+ String.format("%.2f", price)
+				+ ", Quantity: "
+				+ quantity 
+				+ ", Subtotal: %"
+				+ String.format("%.2f", subTotal());
+	}
+	
+}

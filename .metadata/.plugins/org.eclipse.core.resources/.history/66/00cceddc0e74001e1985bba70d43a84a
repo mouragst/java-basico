@@ -1,0 +1,35 @@
+package application;
+
+import java.util.Scanner;
+
+import entities.HourContract;
+import entities.Worker;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter department name: ");
+		String department = sc.next();
+		System.out.println("Enter worker data: ");
+		System.out.print("Name: ");
+		String workerName = sc.next();
+		System.out.print("Level: ");
+		String workerLevel = sc.next();
+		System.out.print("Base salary: ");
+		double baseSalary = sc.nextDouble();
+		System.out.println("How many contracts for this worker?");
+		int n = sc.nextInt();
+		
+		for (int i=0; i<n; i++) {
+			System.out.println("Enter contract #" + i +" data: ");
+			HourContract contract = new HourContract(date, Double valuePerHour, Integer hours);
+			
+		}
+		
+		
+		sc.close();
+	}
+
+}

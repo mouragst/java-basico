@@ -1,0 +1,33 @@
+package entities;
+
+public class JuristicPerson extends Person {
+
+	private Integer employee;
+
+	public JuristicPerson() {
+	}
+
+	public JuristicPerson(String name, Double anualGain, Integer employee) {
+		super(name, anualGain);
+		this.employee = employee;
+	}
+
+	public Integer getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Integer employee) {
+		this.employee = employee;
+	}
+
+	@Override
+	public double tax() {
+		if (employee > 10) {
+			anualGain *= 0.14;
+		} else {
+			anualGain *= 0.16;
+		}
+		return anualGain;
+	}
+
+}
